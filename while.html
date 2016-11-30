@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1> While and JSON Example </h1>
+<p id="numbers">
+</p>
+<p id="8">
+</p>
+<p id="mansion">
+</p>
+<script>
+var house = '{ "garage" : [' +
+'{ "type":"truck:" , "model":"raptor" },' +
+'{ "type":"coupe:" , "model":"370z" },' +
+'{ "type":"van:" , "model":"mystery machine" } ]}';
+var i = 0;
+var numbers = "";
+
+while (i < 8) {
+  numbers += "<br>I equals " + i;
+  i++;
+}
+document.getElementById("numbers").innerHTML = numbers;
+
+if (i < 9) {
+  i++;
+  document.getElementById("8").innerHTML = numbers += "<br>I equals " + i;
+}
+
+if (i > 8) {
+obj = JSON.parse(house);
+document.getElementById("mansion").innerHTML = obj.garage[2].type + " "
++ obj.garage[2].model;
+}
+
+</script>
+</body>
+</html>
